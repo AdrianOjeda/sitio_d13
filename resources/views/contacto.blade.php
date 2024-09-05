@@ -10,8 +10,8 @@
     
     <form action="/guardarFormulario" method="POST">
     @csrf
-    <label for="name">Text</label>
-    <input type="text" name ="name">
+    <label for="nombre">Text</label>
+    <input type="text" name ="nombre">
 
     <label for="correo">Correo: </label>
     <input type="email" name ="correo">

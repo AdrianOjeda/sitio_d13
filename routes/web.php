@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,19 +21,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/contacto', function(){
-    return view('contacto');
+Route::get('/contacto', [ContactoController::class, 'formularioContacto']);
 
-});
-
-Route::post('/guardarFormulario', function(Request $request){
-    dd($request->all());
-
-    
+Route::post('/guardarFormulario', [ContactoController::class, 'guardarFormulario']);
 
 
-
-    return 'Todo chido';
-    
-
-});
+Route::get('/mensajes', [ContactoController::class, 'listado']);
