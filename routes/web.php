@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactoController;
-
-
+use App\Http\Controllers\NoticiaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +20,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/contacto', [ContactoController::class, 'formularioContacto']);
+Route::get('/contacto/{cliente?}', [ContactoController::class, 'formularioContacto']);
 
 Route::post('/guardarFormulario', [ContactoController::class, 'guardarFormulario']);
 
 
 Route::get('/mensajes', [ContactoController::class, 'listado']);
+Route::resource('noticias', NoticiaController::class);
